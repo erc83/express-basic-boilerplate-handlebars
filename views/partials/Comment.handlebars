@@ -1,0 +1,21 @@
+<li class="comment__item">
+    <picture class="comment__item-profile">
+        <img class="comment__profile" src={{this.user.img}} alt="">
+    </picture>
+    <div class="comment__item-content">
+        <p class="comment__text">
+        
+        <span class="comment__username">{{this.user.name}}</span>
+        {{this.body}}
+        </p>
+        <p class="comment__info">
+        <span class="comment__time">{{this.date}}</span>
+        {{#if this.liked}}
+        <a class="comment__like comment__like-liked" href="#"><i class="fas fa-heart"></i></a>
+        {{else}}
+        <a class="comment__like" href="#"><i class="fas fa-heart"></i></a>
+        {{/if}}
+        <a class="comment__reply" href="#">reply</a>
+        </p>
+    </div>
+</li>

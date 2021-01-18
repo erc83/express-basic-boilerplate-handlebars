@@ -1,0 +1,64 @@
+ <li class="card">
+      <div class="card__highlight">
+        <picture>
+            <img class="card__img" src={{this.landscape.img}}>
+        </picture>
+      </div>
+      <div class="card__content">
+        <a class="card__profile-container" href="#">
+          <img class="card__profile" src={{this.user.img}} alt="">
+        </a>
+        {{#if this.landscape.liked}}
+        <a class="card__like card__like--red" href="#">
+        {{else}}
+        <a class="card__like" href="#">
+        {{/if}}
+          <i class="fas fa-heart"></i>
+        </a>
+        <div class="card__title">
+          <h2 class="card__title-text">{{this.landscape.place}}</h2>
+        </div>
+        <div class="card__author">
+          <h3 class="card__author-name">
+            <a class="card__author-follow" href="#">Follow</a>
+            {{this.user.name}}
+          </h3>
+        </div>
+
+        <div class="card__hidden">
+          <div class="card__data">
+            <ul class="social">
+              <li class="social__element">
+                <div class="social__number">{{this.user.social.followers}}</div>
+                <div class="social__text">Followers</div>
+              </li>
+              <li class="social__element">
+                <div class="social__number">{{this.user.social.likes}}</div>
+                <div class="social__text">Likes</div>
+              </li>
+              <li class="social__element">
+                <div class="social__number">{{this.user.social.following}}</div>
+                <div class="social__text">Following</div>
+              </li>
+            </ul>
+
+            
+            <ul class="comment__list">
+                {{#each this.comments}}
+                {{>Comment}}
+                {{/each}}
+            </ul>
+
+            <form class="add_comment" action="#">
+              <picture class="add_comment__profile-container">
+                <img class="add_comment__profile" src="./assets/images/profiles/uk.png" alt="">
+              </picture>
+              <div class="add_comment__content">
+                <textarea name="comment[]" class="add_comment__text"></textarea>
+                <button type="submit" class="add_comment__submit">Publicar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </li>
